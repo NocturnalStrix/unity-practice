@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class SwordDamage : MonoBehaviour
 {
-    [SerializeField] private float damage;
+    [SerializeField] private float _swordDamage;
     //Sword Collider
     [SerializeField] private Collider weaponCollider;
 
@@ -14,24 +14,13 @@ public class SwordDamage : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Update is running");
-
-        Debug.Log(enemyHealth == null
-            ? "enemyHealth is NULL"
-            : "enemyHealth is assigned");
-
-        Debug.Log(gameVictoryScreen == null
-            ? "gameVictoryScreen is NULL"
-            : "gameVictoryScreen is assigned");
-
-        Debug.Log(victoryPanel == null
-            ? "victoryPanel is NULL"
-            : "victoryPanel is assigned");
-
-        if (enemyHealth.health <= 0)
+        // Debug.Log("Health: " + enemyHealth.health
+        // + ", Defeated: " + gameVictoryScreen.enemyDefeated);
+        if (enemyHealth.health <= 0 && !gameVictoryScreen.enemyDefeated)
         {
+            gameVictoryScreen.enemyDefeated = true;
             gameVictoryScreen.Show(victoryPanel);
-        }
+        }  
     }
     
     private void OnTriggerEnter(Collider other)
@@ -39,7 +28,7 @@ public class SwordDamage : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             //Debug.Log(message: "Enemy Hit");
-            enemyHealth.TakeDamage(damage);
+            enemyHealth.TakeDamage(_swordDamage);
         }
     }
 

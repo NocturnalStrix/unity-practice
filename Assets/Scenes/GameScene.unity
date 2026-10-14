@@ -867,6 +867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   canvasGroup: {fileID: 376931689}
+  enemyDefeated: 0
 --- !u!225 &376931689
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1643,7 +1644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d9c7360de88f542af3be68a3c2bc40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  damage: 15
+  _swordDamage: 15
   weaponCollider: {fileID: 1039628879}
   enemyHealth: {fileID: 1105081662}
   gameVictoryScreen: {fileID: 376931688}
@@ -2825,7 +2826,7 @@ MonoBehaviour:
   speed: 5
   smoothTime: 0.05
   _flashColor: {r: 1, g: 0, b: 0, a: 1}
-  _damage: 15
+  _enemyDamage: 15
   _health: {fileID: 1609007802}
   gameOverScreen: {fileID: 2017555074}
   gameOverPanel: {fileID: 2017555070}
@@ -4075,6 +4076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   canvasGroup: {fileID: 2017555075}
+  enemyDefeated: 0
 --- !u!225 &2017555075
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4260,10 +4262,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 30.3
+  m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -4648,10 +4650,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
+  m_fontSize: 22.05
   m_fontSizeBase: 32
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1

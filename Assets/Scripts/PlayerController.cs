@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     public Color _flashColor = Color.red;
     private float _flashDuration = 0.1f;
     private Color _originalColor;
-    public float _damage;
+    public float _enemyDamage;
     public healthBar _health;
     //Iframes
     //private bool isInvincible=false;
@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log(message: "Player Hit!");
             Flash();
-            _health.TakeDamage(_damage);
+            _health.TakeDamage(_enemyDamage);
         }
     }
 

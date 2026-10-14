@@ -5,6 +5,7 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private CanvasGroup canvasGroup;
     private CanvasGroup panelCanvasGroup;
+    public bool enemyDefeated = false;
 
     public void LoadScene(string sceneName)
     {
@@ -24,11 +25,9 @@ public class MainMenuManager : MonoBehaviour
     public void Show(GameObject panel)
     {
         panelCanvasGroup = panel.GetComponent<CanvasGroup>();
-        Debug.Log(panel == null? "panel is null":panel.name);
         panelCanvasGroup.alpha = 1f;
         panelCanvasGroup.interactable = true;
         panelCanvasGroup.blocksRaycasts = true;
-
         Time.timeScale = 0f;
 
         Cursor.lockState = CursorLockMode.None;
